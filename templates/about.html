@@ -5,7 +5,13 @@
 {% endblock %}
 
 {% block body %}
-<form action="{{ url_for('test4')}}" method="post">
+<ul>
+  {% for item in mylist %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<form action="{{ url_for('test5')}}" method="post">
   <input type="text" name="test" placeholder="Enter your test">
   <button>Submit</button>
 </form>

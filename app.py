@@ -1,6 +1,7 @@
 # "application.py" is the common name for Flask
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
+from flask_session import Session
 import datetime
 
 # create a new flask app
@@ -33,9 +34,24 @@ def list_names():
 def about():
     return render_template("about.html")
 
-# Test 4
-@app.route("/about", methods=["POST"])
-def test4():
-    test = request.form.get("test")
-    test = test
-    return render_template("test4.html", test=test)
+# # Test 4
+# @app.route("/about", methods=["POST"])
+# def test4():
+#     test = request.form.get("test")
+#     test = test
+#     return render_template("test4.html", test=test, mylist=mylist)
+
+# Test 5
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+@app.route("/about", methods=["GET", "POST"])
+def test5():
+    if session.get("mylist") is None:
+        session["mylist"] = []
+    if request.method == "POST":
+        test = request.form.get("test")
+        session["mylist"].append(test)
+
+    return render_template("about.html", test=test, mylist=session["mylist"])
