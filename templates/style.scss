@@ -1,0 +1,48 @@
+$quotes_background_color: yellow;
+%div_box{
+  border-width: thin;
+  border-style: ridge;
+  border-color: #ccc;
+}
+
+#Freud_quote:hover, #Latour_quote:hover {
+  background-color: #FFCB9C;
+}
+
+#Aristotle_quote::selection{
+  background-color: blue;
+}
+#Aristotle_quote:hover{
+  background-color: #9CD0FF;
+}
+
+.quotes{
+  background-color: $quotes_background_color;
+  padding: 40px;
+  @extend %div_box;
+}
+
+.container{
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav{
+  a{
+    text-decoration:underline;
+  }
+}
+
+
+@media print{
+  footer{
+    visibility: hidden;
+  }
+}
