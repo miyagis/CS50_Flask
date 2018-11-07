@@ -39,8 +39,13 @@
 
     <div class="container">
       <div class="row">
-        {% block body %}
-        {% endblock %}
+        {% block body row 1 %}
+        {% endblockrow1 %}
+      </div>
+      <!--test a second row-->
+      <div class="row">
+        {% block body row 2 %}
+        {% endblockrow2 %}
       </div>
     </div>
 
