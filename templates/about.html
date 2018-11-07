@@ -4,7 +4,7 @@
   First page
 {% endblock %}
 
-{% block body %}
+{% block body row 1 %}
 <div class="col-sm-4">
   <img src="neil_breen.jpg" alt="Neil Breen picture">
 </div>
@@ -12,15 +12,21 @@
   <p id="Freud_quote" class="quotes">Time spend with cats is never wasted.</p>
   <p id="Latour_quote" class="quotes">Kant is a wannabe realist.</p>
 </div>
+{% endblockrow1 %}
 
+{% block body row 2 %}
+<div class="col-sm-4">
 <ul>
   {% for item in mylist %}
   <li>{{ item }}</li>
   {% endfor %}
 </ul>
-
+</div>
+<div class="col-sm-8">
 <form action="{{ url_for('test5')}}" method="post">
   <input type="text" name="test" placeholder="Enter your test">
   <button>Submit</button>
 </form>
-{% endblock %}
+</div>
+{% endblockrow2 %}
+
