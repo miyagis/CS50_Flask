@@ -3,17 +3,14 @@
   border-style: ridge;
   border-color: #ccc; }
 
-#Freud_quote:hover, #Latour_quote:hover {
-  background-color: #FFCB9C; }
+.quotes:hover {
+  background-color: #A9A9A9; }
 
 #Aristotle_quote::selection {
   background-color: blue; }
 
-#Aristotle_quote:hover {
-  background-color: #9CD0FF; }
-
 .quotes {
-  background-color: yellow;
+  background-color: #D3D3D3;
   padding: 40px; }
 
 .container {

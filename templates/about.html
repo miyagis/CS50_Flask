@@ -1,32 +1,17 @@
 {% extends "layout.html" %}
 
-{% block heading %}
-  First page
+{% block heading %}About{% endblock %}
+{% block heading_quote %}{{ quote }}{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{{ url_for('static', filename='neil_breen.jpg')}}" alt="Neil Breen picture">
+  </div>
+  <div class="col-sm-8">
+    <p id="Freud_quote" class="quotes">Time spend with cats is never wasted.</p>
+    <p id="Latour_quote" class="quotes">Kant is a wannabe realist.</p>
+  </div>
+</div>
+
 {% endblock %}
-
-{% block body row 1 %}
-<div class="col-sm-4">
-  <img src="neil_breen.jpg" alt="Neil Breen picture">
-</div>
-<div class="col-sm-8">
-  <p id="Freud_quote" class="quotes">Time spend with cats is never wasted.</p>
-  <p id="Latour_quote" class="quotes">Kant is a wannabe realist.</p>
-</div>
-{% endblockrow1 %}
-
-{% block body row 2 %}
-<div class="col-sm-4">
-<ul>
-  {% for item in mylist %}
-  <li>{{ item }}</li>
-  {% endfor %}
-</ul>
-</div>
-<div class="col-sm-8">
-<form action="{{ url_for('test5')}}" method="post">
-  <input type="text" name="test" placeholder="Enter your test">
-  <button>Submit</button>
-</form>
-</div>
-{% endblockrow2 %}
-

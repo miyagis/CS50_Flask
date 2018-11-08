@@ -4,25 +4,9 @@
   First page
 {% endblock %}
 
-{% block body row 1 %}
-<div id="t1">
-  {% if new_year %}
-    <h2>Happy New Year</h2>
-  {% else %}
-    <h2>No</h2>
-  {% endif %}
+{% block body %}
+<div class="row">
+  <div class="col-sm">
+  </div>
 </div>
-
-<div id="t2">
-  <h2>Names</h2>
-  <ul>
-    {% for name in names %}
-    <li>{{ name }}</li>
-    {% endfor %}
-  </ul>
-</div>
-
-<div id="t3">
-  <a href="{{ url_for('about') }}">Go to about</a>
-</div>
-{% endblockrow1 %}
+{% endblock %}
