@@ -44,14 +44,14 @@ def about():
     return render_template("about.html", quote=quote, page_title=page_title)
 
 @app.route("/twisted_pair")
-def films():
+def twisted_pair():
     i = randrange(len(quotes)-1)
     quote = quotes[i]
     page_title = "Twisted Pair"
     return render_template("twisted_pair.html", quote=quote, page_title=page_title)
 
 @app.route("/pass_thru")
-def films():
+def pass_thru():
     i = randrange(len(quotes)-1)
     quote = quotes[i]
     page_title = "Pass Thru"
