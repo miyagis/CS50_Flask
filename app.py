@@ -22,6 +22,20 @@ quotes = ["I can't believe you committed suicide. I cannot believe you committed
 "I've been hacking into government and corporate systems all over the country. All over the world. I have discovered more information than any hacker ever has.",
 "I don't know who that is!"]
 
+@app.route("/")
+def main():
+    i = randrange(len(quotes)-1)
+    quote = quotes[i]
+    page_title = "Main"
+    return render_template("main.html", quote=quote, page_title=page_title)
+
+@app.route("/main")
+def main_bis():
+    i = randrange(len(quotes)-1)
+    quote = quotes[i]
+    page_title = "Main"
+    return render_template("main.html", quote=quote, page_title=page_title)
+
 @app.route("/about")
 def about():
     i = randrange(len(quotes)-1)
@@ -36,19 +50,12 @@ def films():
     page_title = "Twisted Pair"
     return render_template("twisted_pair.html", quote=quote, page_title=page_title)
 
-@app.route("/")
-def main():
+@app.route("/pass_thru")
+def films():
     i = randrange(len(quotes)-1)
     quote = quotes[i]
-    page_title = "Main"
-    return render_template("main.html", quote=quote, page_title=page_title)
-
-@app.route("/main")
-def main_bis():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
-    page_title = "Main"
-    return render_template("main.html", quote=quote, page_title=page_title)
+    page_title = "Pass Thru"
+    return render_template("pass_thru.html", quote=quote, page_title=page_title)
 
 @app.route("/contact")
 def contact():
