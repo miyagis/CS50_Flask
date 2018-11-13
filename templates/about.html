@@ -5,9 +5,24 @@
   <div class="col-sm-4">
     <img src="{{ url_for('static', filename='neil_breen.jpg')}}" alt="Neil Breen picture">
   </div>
+
   <div class="col-sm-8">
-    <p id="Freud_quote" class="quotes">Time spend with cats is never wasted.</p>
-    <p id="Latour_quote" class="quotes">Kant is a wannabe realist.</p>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#life">Life</button>
+    <div id="life" class="collapse show">
+      Neil Francis Breen is a American filmmaker and actor, as well as architect and former real-estate agent.
+    </div>
+
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#art">Art</button>
+    <div id="art" class="collapse show">
+      All of his films share the common theme of Breen portraying a god-like being
+      who exposes or destroys powerful, corrupt institutions. Fateful Findings
+      features Breen as a hacker imbued with supernatural powers by a magical
+      stone he found as a child, who uses his skills to expose government and
+      corporate corruption, while Pass Thru has Breen playing a messianic entity
+      who comes to earth to wipe out 300 million "bad people" to usher in a new era of peace.
+      He says that his films have a "sense of social responsibility" and reflect the
+      "mystical or paranormal side of life."
+    </div>
   </div>
 </div>
 {% endblock %}
