@@ -9,6 +9,9 @@
 #Aristotle_quote::selection {
   background-color: blue; }
 
+#header_quote {
+  font-style: italic; }
+
 .quotes {
   background-color: #D3D3D3;
   padding: 40px; }

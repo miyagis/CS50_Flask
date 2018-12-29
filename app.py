@@ -22,47 +22,41 @@ quotes = ["I can't believe you committed suicide. I cannot believe you committed
 "I've been hacking into government and corporate systems all over the country. All over the world. I have discovered more information than any hacker ever has.",
 "I don't know who that is!"]
 
-@app.route("/")
-def main():
+def get_quote():
     i = randrange(len(quotes)-1)
     quote = quotes[i]
+    quote = '"' + quote + '"'
+    return quote
+
+@app.route("/")
+def main():
     page_title = "Main"
-    return render_template("main.html", quote=quote, page_title=page_title)
+    return render_template("main.html", quote=get_quote(), page_title=page_title)
 
 @app.route("/main")
 def main_bis():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
     page_title = "Main"
-    return render_template("main.html", quote=quote, page_title=page_title)
+    return render_template("main.html", quote=get_quote(), page_title=page_title)
 
 @app.route("/about")
 def about():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
     page_title = "About"
-    return render_template("about.html", quote=quote, page_title=page_title)
+    return render_template("about.html", quote=get_quote(), page_title=page_title)
 
 @app.route("/twisted_pair")
 def twisted_pair():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
     page_title = "Twisted Pair"
-    return render_template("twisted_pair.html", quote=quote, page_title=page_title)
+    return render_template("twisted_pair.html", quote=get_quote(), page_title=page_title)
 
 @app.route("/pass_thru")
 def pass_thru():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
     page_title = "Pass Thru"
-    return render_template("pass_thru.html", quote=quote, page_title=page_title)
+    return render_template("pass_thru.html", quote=get_quote(), page_title=page_title)
 
 @app.route("/contact")
 def contact():
-    i = randrange(len(quotes)-1)
-    quote = quotes[i]
     page_title = "Contact"
-    return render_template("contact.html", quote=quote, page_title=page_title)
+    return render_template("contact.html", quote=get_quote(), page_title=page_title)
 
 # --------------------TESTS-----------------------
 # @app.route("/t2")
